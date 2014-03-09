@@ -27,8 +27,8 @@ void *add_elem(node* cap_lista)
 	while(p->next!=NULL)
 		p=p->next;
 	q=init();
-	printf("Baga valoarea: ");
-	scanf("%c",q->key);
+	printf("Baga valoarea: ");// imi scrie randul asta de n ori unul dupa altul si se incheie programul
+	scanf("%c",q->key);//aici cred ca e ceva dubios
 	p->next=q;
 }
 
@@ -38,13 +38,13 @@ void write(node *cap_lista)
 	int c;
 	p=cap_lista->next;
 
-	printf("%c ",&p->key);
+	printf("%c ",&p->key); //nu stiu daca e cu & sau fara, dar aparent functioneaza both ways
 	for(p=p->next;p!=NULL;p=p->next)
 	{	
 		c=0;
 		for(q=cap_lista->next;q!=p;q=q->next)
 		{
-			if(q->key==p->key)
+			if(q->key==p->key)//nu stiu daca merge compararea de caractere asa dar nu da erori la compilare
 				c++;
 		}
 		if(c==0) 
