@@ -1,5 +1,4 @@
-//1. Intr-o lista inlantuita sunt mai multe litere mici.
-//Afisati literele distincte aflate in lista..
+//There are some lowercase chars in a linked list. Print each different char only once.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,8 +26,8 @@ void *add_elem(node* cap_lista)
 	while(p->next!=NULL)
 		p=p->next;
 	q=init();
-	printf("Baga valoarea: ");// imi scrie randul asta de n ori unul dupa altul si se incheie programul
-	scanf("%c",q->key);//aici cred ca e ceva dubios
+	printf("Type in the key: ");
+	scanf("%c",q->key);
 	p->next=q;
 }
 
@@ -38,13 +37,13 @@ void write(node *cap_lista)
 	int c;
 	p=cap_lista->next;
 
-	printf("%c ",&p->key); //nu stiu daca e cu & sau fara, dar aparent functioneaza both ways
+	printf("%c ",&p->key); 
 	for(p=p->next;p!=NULL;p=p->next)
 	{	
 		c=0;
 		for(q=cap_lista->next;q!=p;q=q->next)
 		{
-			if(q->key==p->key)//nu stiu daca merge compararea de caractere asa dar nu da erori la compilare
+			if(q->key==p->key)
 				c++;
 		}
 		if(c==0) 
@@ -57,7 +56,7 @@ int main()
 	node* cap_lista;
 	int n, i;
 	cap_lista=init();
-	printf("Zi cate elemente are lista: ");
+	printf("How many elements does the list have: ");
 	scanf("%d", &n);
 	for(i=0;i<n;i++)
 		add_elem(cap_lista);
